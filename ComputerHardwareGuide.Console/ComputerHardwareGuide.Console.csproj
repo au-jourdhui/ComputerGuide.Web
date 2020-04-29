@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ComputerHardWareGuide.DAL\ComputerHardwareGuide.DAL.csproj" />
-    <ProjectReference Include="..\ComputerHardwareGuide.Models\ComputerHardwareGuide.Models.csproj" />
   </ItemGroup>
 
 </Project>
