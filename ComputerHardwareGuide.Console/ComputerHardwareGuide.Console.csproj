@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\CPUs\" />
+    <Folder Include="Images\GPUs\" />
+    <Folder Include="Images\Motherboards\" />
+    <Folder Include="Images\PowerUnits\" />
+    <Folder Include="Images\RAMs\" />
+    <Folder Include="Images\HDDs\" />
+    <Folder Include="Images\SSDs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ComputerHardWareGuide.DAL\ComputerHardwareGuide.DAL.csproj" />
+    <ProjectReference Include="..\ComputerHardwareGuide.Models\ComputerHardwareGuide.Models.csproj" />
+  </ItemGroup>
+
+</Project>
