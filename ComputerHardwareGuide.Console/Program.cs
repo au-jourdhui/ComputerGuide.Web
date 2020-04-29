@@ -13,7 +13,7 @@ namespace ComputerHardwareGuide.Console
 {
     class Program
     {
-        const string conn = "Data Source=localhost;Initial Catalog=ComputerHardwareGuideDB;Integrated Security=True;";
+        const string conn = "Data Source=localhost;Initial Catalog=ComputerGuideDB;Integrated Security=True;";
         static void Main(string[] args)
         {
             using (var context = new DAL.AppContext(conn, false))
