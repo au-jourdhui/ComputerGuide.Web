@@ -169,11 +169,11 @@ namespace ComputerHardwareGuide.Web.Controllers
         }
 
         [HttpDelete("component")]
-        public async Task<IActionResult> Delete(int assemblyId, int componentId)
+        public async Task<IActionResult> Delete(int assemblyId, int componentId, int type)
         {
             try
             {
-                var assemblyComponent = await AppContext.AssemblyComponents.FirstOrDefaultAsync(x => x.Assembly.Id == assemblyId && x.ComponentId == componentId);
+                var assemblyComponent = await AppContext.AssemblyComponents.FirstOrDefaultAsync(x => x.Assembly.Id == assemblyId && x.ComponentId == componentId && x.ComponentType.Id == type);
 
                 if (assemblyComponent == null)
                 {

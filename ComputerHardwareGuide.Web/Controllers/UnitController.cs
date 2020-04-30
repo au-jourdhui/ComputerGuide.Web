@@ -562,30 +562,6 @@ namespace ComputerHardwareGuide.Web.Controllers
             };
             units.Add(countOfSATAUnit);
             #endregion
-
-            #region Power Supports Unit
-            var powerSupportsQuery = (from q in query
-                                      join ps in AppContext.PowerSupports.AsQueryable()
-                                      on q equals ps.ComponentPowerUnit
-                                      join lv in AppContext.LookupValues.Include(x => x.Lookup).ThenInclude(x => x.LookupValues).AsQueryable()
-                                      on ps.PowerConnection equals lv
-                                      select lv.Lookup).DistinctBy(x => x.Id);
-
-            var powerSupportsUnits = powerSupportsQuery.Select(x => new Unit
-            {
-                Key = x.Key,
-                Name = x.Name,
-                UnitType = UnitType.CheckboxGroup,
-                Options = x.LookupValues
-                .Select(l => new Option
-                {
-                    Key = "powerSupports",
-                    Text = $"{l.DisplayText}",
-                    Value = l.Id
-                })
-            });
-            units.AddRange(powerSupportsUnits);
-            #endregion
         }
 
         private void SetMotherboardUnits(List<Unit> units)
